@@ -94,6 +94,13 @@ if (menuButton) {
 
             nav.classList.toggle("open");
 
+            const aberto = nav.classList.contains("open");
+            menuButton.setAttribute("aria-expanded", aberto);
+            menuButton.setAttribute(
+                "aria-label",
+                aberto ? "Fechar menu" : "Abrir menu"
+            );
+
         }
     );
 
@@ -1056,5 +1063,37 @@ if (telefoneInput) {
 
         }
     );
+
+}
+
+
+/* =========================================
+   RETORNO DAS IMAGENS SELECIONADAS
+========================================= */
+
+const imagensInput = document.getElementById("clientImages");
+const fileFeedback = document.getElementById("fileFeedback");
+
+if (imagensInput && fileFeedback) {
+
+    imagensInput.addEventListener("change", () => {
+
+        const total = imagensInput.files.length;
+
+        if (total === 0) {
+            fileFeedback.textContent = "";
+            return;
+        }
+
+        if (total < 5) {
+            fileFeedback.textContent =
+                `${total} imagem(ns) selecionada(s). Faltam ${5 - total}.`;
+            return;
+        }
+
+        fileFeedback.textContent =
+            `${total} imagens selecionadas. Perfeito, já podemos usar essas referências.`;
+
+    });
 
 }

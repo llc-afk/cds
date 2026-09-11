@@ -20,6 +20,9 @@
 
 <body>
 
+    <div class="page-glow page-glow-one" aria-hidden="true"></div>
+    <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
     <!-- =========================
          CABEÇALHO
     ========================== -->
@@ -54,6 +57,7 @@
             class="menu-button"
             id="menuButton"
             aria-label="Abrir menu"
+            aria-expanded="false"
         >
             ☰
         </button>
@@ -76,7 +80,7 @@
             <div class="hero-content">
 
                 <div class="hero-badge">
-                    CRIAÇÃO DIGITAL PERSONALIZADA
+                    <i></i> CRIAÇÃO DIGITAL PERSONALIZADA
                 </div>
 
 
@@ -87,9 +91,9 @@
 
 
                 <p>
-                    Criamos sites modernos, rápidos e personalizados
-                    para transformar sua ideia ou negócio em uma
-                    presença digital profissional.
+                    Sites que deixam sua marca mais profissional,
+                    facilitam o contato com seus clientes e ajudam
+                    o seu negócio a crescer na internet.
                 </p>
 
 
@@ -261,8 +265,8 @@
                     <div class="service-footer">
 
                         <span>
-                            A partir de
-                            <strong>A partir de R$ 1.500</strong>
+                            Projeto essencial
+                            <strong>R$ 1.500</strong>
                         </span>
 
 
@@ -314,8 +318,8 @@
                     <div class="service-footer">
 
                         <span>
-                            A partir de
-                            <strong>A partir de R$ 1.200</strong>
+                            Projeto estratégico
+                            <strong>R$ 1.200</strong>
                         </span>
 
 
@@ -354,7 +358,7 @@
                     <div class="service-footer">
 
                         <span>
-                            A partir de
+                            Projeto completo
                             <strong>R$ 4.000</strong>
                         </span>
 
@@ -372,8 +376,7 @@
 
 
             <p class="price-note">
-                * O valor final depende das funcionalidades
-                e complexidade do projeto.
+                Valores iniciais. O orçamento final é apresentado com clareza antes do início do projeto.
             </p>
 
         </section>
@@ -1102,6 +1105,7 @@
                         <label>Envie no mínimo 5 imagens dos produtos, serviços ou da loja *</label>
                         <input type="file" id="clientImages" accept="image/*" multiple required>
                         <small class="field-help">Selecione pelo menos 5 imagens. Elas serão usadas como referência para o site.</small>
+                        <small class="file-feedback" id="fileFeedback" aria-live="polite"></small>
                     </div>
 
                     <div class="input-group">
