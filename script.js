@@ -1,4 +1,3 @@
-```javascript
 /* =========================================
    CONFIGURAÇÕES
 ========================================= */
@@ -16,8 +15,14 @@
    "https://www.instagram.com/nexoraweb/";
 */
 
-const INSTAGRAM_EMPRESA =
-    "https://www.instagram.com/SEU_INSTAGRAM_AQUI/";
+const INSTAGRAM_EMPRESA = "";
+
+
+/*
+   Informe seu WhatsApp com DDI e DDD, somente números.
+   Exemplo para o Brasil: "5511999999999"
+*/
+const WHATSAPP_EMPRESA = "";
 
 
 /* =========================================
@@ -42,6 +47,14 @@ const pedido = {
 
     empresa: "",
 
+    perfilSocial: "",
+
+    categorias: "",
+
+    imagens: [],
+
+    negocio: "",
+
     descricao: ""
 
 };
@@ -53,13 +66,9 @@ const pedido = {
 
 const precosServicos = {
 
-    "Site Básico": 500,
+    "Site Básico": 1500,
 
-    "Landing Page": 700,
-
-    "Loja Virtual": 1500,
-
-    "Projeto Completo": 2500,
+    "Landing Page": 1200,
 
     "Manutenção de Site": 0
 
@@ -104,6 +113,36 @@ function irParaPedido() {
             behavior: "smooth"
 
         });
+
+}
+
+
+/* =========================================
+   SOLICITAR LOJA VIRTUAL
+========================================= */
+
+function solicitarLojaVirtual() {
+
+    const mensagem =
+        "Olá! Quero uma loja virtual funcional. Vi que o investimento começa em R$ 4.000 e gostaria de receber um orçamento.";
+
+    if (WHATSAPP_EMPRESA) {
+
+        const link =
+            "https://wa.me/" + WHATSAPP_EMPRESA +
+            "?text=" + encodeURIComponent(mensagem);
+
+        window.open(link, "_blank", "noopener");
+
+        return;
+
+    }
+
+    navigator.clipboard.writeText(mensagem).catch(() => {});
+
+    alert(
+        "Configure o número em WHATSAPP_EMPRESA no arquivo script.js para receber esta solicitação. A mensagem já foi copiada."
+    );
 
 }
 
@@ -221,6 +260,8 @@ function nextStep(numero) {
 
         atualizarRecursos();
 
+        atualizarCamposCondicionais();
+
     }
 
 
@@ -248,25 +289,43 @@ function nextStep(numero) {
                 .trim();
 
 
-        if (
-            nome === "" ||
-            telefone === ""
-        ) {
+        const empresa = document.getElementById("clientBusiness").value.trim();
+        const negocio = document.getElementById("clientBusinessDetails").value.trim();
+        const descricao = document.getElementById("clientDescription").value.trim();
+        const imagens = document.getElementById("clientImages").files;
+        const temRedeSocial = pedido.recursos.some(recurso =>
+            ["WhatsApp", "Instagram", "Outras redes sociais"].includes(recurso.nome)
+        );
+        const temCategorias = pedido.recursos.some(recurso =>
+            recurso.nome === "Categorias por abas"
+        );
 
-            alert(
-                "Preencha seu nome e telefone para continuar."
-            );
-
+        if (nome === "" || telefone === "" || empresa === "" || negocio === "" || descricao === "") {
+            alert("Preencha todos os campos obrigatórios para continuar.");
             return;
+        }
 
+        if (temRedeSocial && document.getElementById("clientSocialProfile").value.trim() === "") {
+            alert("Informe o @, link ou nome da rede social selecionada.");
+            return;
+        }
+
+        if (temCategorias && document.getElementById("clientCategories").value.trim() === "") {
+            alert("Informe as categorias que deseja usar nas abas.");
+            return;
+        }
+
+        if (imagens.length < 5) {
+            alert("Selecione no mínimo 5 imagens dos seus produtos, serviços ou loja.");
+            return;
         }
 
 
         atualizarDadosCliente();
 
-        atualizarResumo();
-
         calcularPreco();
+
+        atualizarResumo();
 
     }
 
@@ -428,6 +487,28 @@ function atualizarRecursos() {
 
 
 /* =========================================
+   CAMPOS CONDICIONAIS
+========================================= */
+
+function atualizarCamposCondicionais() {
+
+    const temRedeSocial = pedido.recursos.some(recurso =>
+        ["WhatsApp", "Instagram", "Outras redes sociais"].includes(recurso.nome)
+    );
+
+    const temCategorias = pedido.recursos.some(recurso =>
+        recurso.nome === "Categorias por abas"
+    );
+
+    document.getElementById("socialProfileGroup").hidden = !temRedeSocial;
+    document.getElementById("categoriesGroup").hidden = !temCategorias;
+    document.getElementById("clientSocialProfile").required = temRedeSocial;
+    document.getElementById("clientCategories").required = temCategorias;
+
+}
+
+
+/* =========================================
    ATUALIZAR DADOS DO CLIENTE
 ========================================= */
 
@@ -458,6 +539,20 @@ function atualizarDadosCliente() {
             )
             .value
             .trim();
+
+
+    pedido.perfilSocial =
+        document.getElementById("clientSocialProfile").value.trim();
+
+    pedido.categorias =
+        document.getElementById("clientCategories").value.trim();
+
+    pedido.imagens =
+        Array.from(document.getElementById("clientImages").files)
+            .map(imagem => imagem.name);
+
+    pedido.negocio =
+        document.getElementById("clientBusinessDetails").value.trim();
 
 
     pedido.descricao =
@@ -568,10 +663,22 @@ function calcularPreco() {
    ATUALIZAR RESUMO
 ========================================= */
 
+function formatarPreco(valor) {
+
+    return Number(valor).toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
+
+}
+
 function atualizarResumo() {
 
     let recursosHTML =
-        "Nenhum recurso adicional selecionado";
+        "Nenhuma opção selecionada";
 
 
     if (
@@ -582,7 +689,7 @@ function atualizarResumo() {
             pedido.recursos
                 .map(
                     recurso =>
-                        `<div>• ${recurso.nome}</div>`
+                        `<div>• ${recurso.nome}: ${formatarPreco(recurso.preco)}</div>`
                 )
                 .join("");
 
@@ -607,17 +714,52 @@ function atualizarResumo() {
 
             </div>
 
+            <div class="summary-row">
+                <span class="summary-label">Valor do serviço</span>
+                <div class="summary-value">${pedido.servico === "Manutenção de Site" ? "Sob consulta" : formatarPreco(pedido.precoBase)}</div>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Adicionais</span>
+                <div class="summary-value">${pedido.servico === "Manutenção de Site" ? "Definido após análise" : formatarPreco(pedido.precoRecursos)}</div>
+            </div>
+
+            <div class="summary-row summary-total">
+                <span class="summary-label">Total estimado</span>
+                <div class="summary-value">${pedido.servico === "Manutenção de Site" ? "Sob consulta" : formatarPreco(pedido.precoTotal)}</div>
+            </div>
+
 
             <div class="summary-row">
 
                 <span class="summary-label">
-                    Recursos selecionados
+                    Opções selecionadas
                 </span>
 
                 <div class="summary-value">
                     ${recursosHTML}
                 </div>
 
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Rede social</span>
+                <div class="summary-value">${pedido.perfilSocial || "Não informado"}</div>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Categorias por abas</span>
+                <div class="summary-value">${pedido.categorias || "Não informado"}</div>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Imagens enviadas</span>
+                <div class="summary-value">${pedido.imagens.length} imagens selecionadas</div>
+            </div>
+
+            <div class="summary-row">
+                <span class="summary-label">Sobre a empresa</span>
+                <div class="summary-value">${pedido.negocio}</div>
             </div>
 
 
@@ -690,7 +832,7 @@ function atualizarResumo() {
 function gerarMensagemPedido() {
 
     let recursosTexto =
-        "Nenhum recurso adicional selecionado";
+        "Nenhuma opção selecionada";
 
 
     if (
@@ -701,7 +843,7 @@ function gerarMensagemPedido() {
             pedido.recursos
                 .map(
                     recurso =>
-                        "- " + recurso.nome
+                        "- " + recurso.nome + ": " + formatarPreco(recurso.preco)
                 )
                 .join("\n");
 
@@ -743,7 +885,7 @@ Olá! Gostaria de solicitar um projeto pela NEXORA WEB.
 SERVIÇO:
 ${pedido.servico}
 
-RECURSOS:
+OPÇÕES SELECIONADAS:
 ${recursosTexto}
 
 ━━━━━━━━━━━━━━━━
@@ -756,6 +898,18 @@ ${pedido.telefone}
 
 EMPRESA / PROJETO:
 ${pedido.empresa || "Não informado"}
+
+REDE SOCIAL:
+${pedido.perfilSocial || "Não informado"}
+
+CATEGORIAS POR ABAS:
+${pedido.categorias || "Não informado"}
+
+IMAGENS SELECIONADAS (${pedido.imagens.length}):
+${pedido.imagens.map(imagem => "- " + imagem).join("\n")}
+
+SOBRE A EMPRESA:
+${pedido.negocio || "Não informado"}
 
 DESCRIÇÃO:
 ${pedido.descricao || "Não informado"}
@@ -795,7 +949,7 @@ async function sendOrder() {
             );
 
         alert(
-            "Sua solicitação foi preparada e a mensagem foi copiada. O Instagram oficial da empresa será aberto agora."
+            "Sua solicitação foi preparada e copiada. Cole a mensagem no seu canal de atendimento para enviá-la."
         );
 
     }
@@ -803,40 +957,15 @@ async function sendOrder() {
     catch (erro) {
 
         alert(
-            "Sua solicitação foi preparada. O Instagram oficial da empresa será aberto."
+            "Sua solicitação foi preparada. Copie o resumo e envie-o pelo seu canal de atendimento."
         );
 
     }
 
 
-    /*
-       VERIFICAR SE O LINK
-       FOI CONFIGURADO
-    */
-
-    if (
-        INSTAGRAM_EMPRESA.includes(
-            "SEU_INSTAGRAM_AQUI"
-        )
-    ) {
-
-        alert(
-            "O Instagram da empresa ainda não foi configurado no arquivo script.js."
-        );
-
-        return;
-
+    if (INSTAGRAM_EMPRESA) {
+        window.open(INSTAGRAM_EMPRESA, "_blank", "noopener");
     }
-
-
-    /*
-       ABRIR INSTAGRAM
-    */
-
-    window.open(
-        INSTAGRAM_EMPRESA,
-        "_blank"
-    );
 
 }
 
@@ -929,4 +1058,3 @@ if (telefoneInput) {
     );
 
 }
-```
