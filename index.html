@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Criação de sites profissionais, lojas virtuais e soluções digitais."
+    >
+
+    <title>Nexora Web | Criação de Sites</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header class="header">
+
+        <a href="#inicio" class="logo">
+            NEXORA<span>.</span>
+        </a>
+
+
+        <nav class="nav" id="nav">
+
+            <a href="#inicio">Início</a>
+
+            <a href="#servicos">Serviços</a>
+
+            <a href="#processo">Como funciona</a>
+
+            <a href="#portifolio">Projetos</a>
+
+            <a href="#pedido">
+                <button class="nav-button">
+                    Solicitar projeto
+                </button>
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            aria-label="Abrir menu"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="inicio"
+        >
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    CRIAÇÃO DIGITAL PERSONALIZADA
+                </div>
+
+
+                <h1>
+                    Seu próximo
+                    <span>site começa aqui.</span>
+                </h1>
+
+
+                <p>
+                    Criamos sites modernos, rápidos e personalizados
+                    para transformar sua ideia ou negócio em uma
+                    presença digital profissional.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-button"
+                        onclick="irParaPedido()"
+                    >
+                        Criar meu site
+                        <span>→</span>
+                    </button>
+
+
+                    <a
+                        href="#servicos"
+                        class="secondary-button"
+                    >
+                        Conhecer serviços
+                    </a>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>100%</strong>
+                        <span>Personalizado</span>
+                    </div>
+
+
+                    <div>
+                        <strong>Mobile</strong>
+                        <span>Responsivo</span>
+                    </div>
+
+
+                    <div>
+                        <strong>Online</strong>
+                        <span>Atendimento digital</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="visual-card card-main">
+
+                    <div class="browser-top">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
+                    <div class="browser-content">
+
+                        <div class="browser-logo">
+                            NEXORA
+                        </div>
+
+
+                        <div class="browser-title">
+                            Seu negócio.<br>
+                            Sua presença.
+                        </div>
+
+
+                        <div class="browser-lines">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card floating-one">
+                    <span>⚡</span>
+                    <div>
+                        <strong>Rápido</strong>
+                        <small>Desempenho otimizado</small>
+                    </div>
+                </div>
+
+
+                <div class="floating-card floating-two">
+                    <span>✦</span>
+                    <div>
+                        <strong>Personalizado</strong>
+                        <small>Feito para você</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SERVIÇOS
+        ========================== -->
+
+        <section
+            class="section"
+            id="servicos"
+        >
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    SERVIÇOS
+                </span>
+
+
+                <h2>
+                    Escolha o tipo de projeto
+                    que combina com você.
+                </h2>
+
+
+                <p>
+                    Cada projeto é desenvolvido de acordo com
+                    as necessidades e objetivos do cliente.
+                </p>
+
+            </div>
+
+
+
+            <div class="services-grid">
+
+
+                <!-- BÁSICO -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ◫
+                    </div>
+
+
+                    <h3>
+                        Site Básico
+                    </h3>
+
+
+                    <p>
+                        Ideal para apresentar uma empresa,
+                        profissional, serviço ou projeto.
+                    </p>
+
+
+                    <ul>
+                        <li>✓ Página personalizada</li>
+                        <li>✓ Design responsivo</li>
+                        <li>✓ Informações principais</li>
+                        <li>✓ Botões de contato</li>
+                    </ul>
+
+
+                    <div class="service-footer">
+
+                        <span>
+                            A partir de
+                            <strong>R$ 500</strong>
+                        </span>
+
+
+                        <button
+                            onclick="escolherServico('Site Básico')"
+                        >
+                            Escolher →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LANDING PAGE -->
+
+                <article class="service-card featured">
+
+                    <div class="popular-tag">
+                        MAIS PROCURADO
+                    </div>
+
+
+                    <div class="service-icon">
+                        ◉
+                    </div>
+
+
+                    <h3>
+                        Landing Page
+                    </h3>
+
+
+                    <p>
+                        Uma página estratégica para apresentar
+                        produtos, serviços ou campanhas.
+                    </p>
+
+
+                    <ul>
+                        <li>✓ Página completa</li>
+                        <li>✓ Design estratégico</li>
+                        <li>✓ Botões de contato</li>
+                        <li>✓ Foco em conversão</li>
+                    </ul>
+
+
+                    <div class="service-footer">
+
+                        <span>
+                            A partir de
+                            <strong>R$ 700</strong>
+                        </span>
+
+
+                        <button
+                            onclick="escolherServico('Landing Page')"
+                        >
+                            Escolher →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LOJA -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        🛒
+                    </div>
+
+
+                    <h3>
+                        Loja Virtual
+                    </h3>
+
+
+                    <p>
+                        Uma estrutura digital para apresentar
+                        e vender produtos online.
+                    </p>
+
+
+                    <ul>
+                        <li>✓ Catálogo de produtos</li>
+                        <li>✓ Carrinho de compras</li>
+                        <li>✓ Área de pedidos</li>
+                        <li>✓ Recursos de venda</li>
+                    </ul>
+
+
+                    <div class="service-footer">
+
+                        <span>
+                            A partir de
+                            <strong>R$ 1.500</strong>
+                        </span>
+
+
+                        <button
+                            onclick="escolherServico('Loja Virtual')"
+                        >
+                            Escolher →
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- COMPLETO -->
+
+                <article class="service-card">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+
+                    <h3>
+                        Projeto Completo
+                    </h3>
+
+
+                    <p>
+                        Um site mais avançado, com recursos,
+                        integrações e funcionalidades.
+                    </p>
+
+
+                    <ul>
+                        <li>✓ Múltiplas páginas</li>
+                        <li>✓ Integrações</li>
+                        <li>✓ Banco de dados*</li>
+                        <li>✓ Recursos personalizados</li>
+                    </ul>
+
+
+                    <div class="service-footer">
+
+                        <span>
+                            A partir de
+                            <strong>R$ 2.500</strong>
+                        </span>
+
+
+                        <button
+                            onclick="escolherServico('Projeto Completo')"
+                        >
+                            Escolher →
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <p class="price-note">
+                * O valor final depende das funcionalidades
+                e complexidade do projeto.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             MANUTENÇÃO
+        ========================== -->
+
+        <section class="maintenance-section">
+
+            <div class="maintenance-content">
+
+                <span class="section-tag">
+                    MANUTENÇÃO
+                </span>
+
+
+                <h2>
+                    Já possui um site?
+                    Podemos ajudar a melhorá-lo.
+                </h2>
+
+
+                <p>
+                    Atualizações, correções, melhorias visuais
+                    e implementação de novas funcionalidades.
+                </p>
+
+
+                <div class="maintenance-list">
+
+                    <span>Atualizações</span>
+
+                    <span>Correções</span>
+
+                    <span>Melhorias</span>
+
+                    <span>Novas funções</span>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="escolherServico('Manutenção de Site')"
+                >
+                    Solicitar manutenção →
+                </button>
+
+            </div>
+
+
+            <div class="maintenance-visual">
+
+                <div class="maintenance-box">
+
+                    <div class="maintenance-icon">
+                        ⚙
+                    </div>
+
+
+                    <div>
+                        <strong>
+                            Seu site atualizado
+                        </strong>
+
+                        <p>
+                            Melhorias contínuas para sua presença digital.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROCESSO
+        ========================== -->
+
+        <section
+            class="section process-section"
+            id="processo"
+        >
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    COMO FUNCIONA
+                </span>
+
+
+                <h2>
+                    Simples do início ao fim.
+                </h2>
+
+
+                <p>
+                    Você envia sua ideia e começamos
+                    a transformar o projeto em realidade.
+                </p>
+
+            </div>
+
+
+            <div class="process-grid">
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+
+                    <h3>
+                        Escolha
+                    </h3>
+
+
+                    <p>
+                        Escolha o tipo de site ou serviço
+                        que melhor atende sua necessidade.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+
+                    <h3>
+                        Personalize
+                    </h3>
+
+
+                    <p>
+                        Informe os detalhes e funcionalidades
+                        que você deseja para o projeto.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+
+                    <h3>
+                        Solicite
+                    </h3>
+
+
+                    <p>
+                        Envie sua solicitação diretamente
+                        pelos canais oficiais da empresa.
+                    </p>
+
+                </div>
+
+
+                <div class="process-item">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+
+                    <h3>
+                        Projeto
+                    </h3>
+
+
+                    <p>
+                        Após a análise das informações,
+                        o projeto é organizado e desenvolvido.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PORTFÓLIO
+        ========================== -->
+
+        <section
+            class="section"
+            id="portifolio"
+        >
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    PROJETOS
+                </span>
+
+
+                <h2>
+                    Possibilidades para o seu próximo site.
+                </h2>
+
+
+                <p>
+                    Estes espaços podem ser utilizados futuramente
+                    para mostrar projetos e demonstrações.
+                </p>
+
+            </div>
+
+
+            <div class="portfolio-grid">
+
+
+                <div class="portfolio-item">
+
+                    <div class="portfolio-preview preview-one">
+
+                        <span>
+                            LOJA ONLINE
+                        </span>
+
+                        <strong>
+                            E-commerce
+                        </strong>
+
+                    </div>
+
+
+                    <div class="portfolio-info">
+
+                        <h3>
+                            Loja Virtual
+                        </h3>
+
+                        <p>
+                            Produtos, carrinho e pedidos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="portfolio-item">
+
+                    <div class="portfolio-preview preview-two">
+
+                        <span>
+                            SERVIÇOS
+                        </span>
+
+                        <strong>
+                            Profissional
+                        </strong>
+
+                    </div>
+
+
+                    <div class="portfolio-info">
+
+                        <h3>
+                            Site Institucional
+                        </h3>
+
+                        <p>
+                            Informações e apresentação profissional.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="portfolio-item">
+
+                    <div class="portfolio-preview preview-three">
+
+                        <span>
+                            PRODUTO
+                        </span>
+
+                        <strong>
+                            Landing Page
+                        </strong>
+
+                    </div>
+
+
+                    <div class="portfolio-info">
+
+                        <h3>
+                            Página de Venda
+                        </h3>
+
+                        <p>
+                            Uma página focada em apresentar uma oferta.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PEDIDO
+        ========================== -->
+
+        <section
+            class="order-section"
+            id="pedido"
+        >
+
+            <div class="section-header">
+
+                <span class="section-tag">
+                    SOLICITAR PROJETO
+                </span>
+
+
+                <h2>
+                    Vamos começar seu projeto.
+                </h2>
+
+
+                <p>
+                    Escolha suas opções e envie sua solicitação.
+                </p>
+
+            </div>
+
+
+            <div class="order-container">
+
+
+                <!-- PROGRESSO -->
+
+                <div class="steps">
+
+                    <div class="step active" data-step="1">
+                        <span>1</span>
+                        <small>Serviço</small>
+                    </div>
+
+                    <div class="step" data-step="2">
+                        <span>2</span>
+                        <small>Recursos</small>
+                    </div>
+
+                    <div class="step" data-step="3">
+                        <span>3</span>
+                        <small>Dados</small>
+                    </div>
+
+                    <div class="step" data-step="4">
+                        <span>4</span>
+                        <small>Resumo</small>
+                    </div>
+
+                </div>
+
+
+
+                <!-- ETAPA 1 -->
+
+                <div
+                    class="form-step active"
+                    id="step1"
+                >
+
+                    <h3>
+                        Qual serviço você precisa?
+                    </h3>
+
+
+                    <div class="selection-grid">
+
+                        <button
+                            class="selection-card"
+                            data-service="Site Básico"
+                            onclick="selecionarServicoFormulario(this)"
+                        >
+
+                            <strong>
+                                Site Básico
+                            </strong>
+
+                            <span>
+                                A partir de R$ 500
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="selection-card"
+                            data-service="Landing Page"
+                            onclick="selecionarServicoFormulario(this)"
+                        >
+
+                            <strong>
+                                Landing Page
+                            </strong>
+
+                            <span>
+                                A partir de R$ 700
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="selection-card"
+                            data-service="Loja Virtual"
+                            onclick="selecionarServicoFormulario(this)"
+                        >
+
+                            <strong>
+                                Loja Virtual
+                            </strong>
+
+                            <span>
+                                A partir de R$ 1.500
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="selection-card"
+                            data-service="Projeto Completo"
+                            onclick="selecionarServicoFormulario(this)"
+                        >
+
+                            <strong>
+                                Projeto Completo
+                            </strong>
+
+                            <span>
+                                A partir de R$ 2.500
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            class="selection-card"
+                            data-service="Manutenção de Site"
+                            onclick="selecionarServicoFormulario(this)"
+                        >
+
+                            <strong>
+                                Manutenção
+                            </strong>
+
+                            <span>
+                                Solicitar orçamento
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="primary-button"
+                            onclick="nextStep(2)"
+                        >
+                            Continuar →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ETAPA 2 -->
+
+                <div
+                    class="form-step"
+                    id="step2"
+                >
+
+                    <h3>
+                        Quais recursos você gostaria?
+                    </h3>
+
+
+                    <p class="step-description">
+                        Selecione todas as opções que deseja.
+                    </p>
+
+
+                    <div class="features-grid">
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Botão para WhatsApp"
+                                data-price="0"
+                            >
+
+                            <span>
+                                <strong>
+                                    WhatsApp
+                                </strong>
+
+                                <small>
+                                    Botão de contato
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Múltiplas páginas"
+                                data-price="300"
+                            >
+
+                            <span>
+                                <strong>
+                                    Mais páginas
+                                </strong>
+
+                                <small>
+                                    Estrutura maior
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Sistema de login"
+                                data-price="500"
+                            >
+
+                            <span>
+                                <strong>
+                                    Login
+                                </strong>
+
+                                <small>
+                                    Área de usuário
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Banco de dados"
+                                data-price="700"
+                            >
+
+                            <span>
+                                <strong>
+                                    Banco de dados
+                                </strong>
+
+                                <small>
+                                    Dados armazenados
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Sistema de pedidos"
+                                data-price="600"
+                            >
+
+                            <span>
+                                <strong>
+                                    Pedidos
+                                </strong>
+
+                                <small>
+                                    Recebimento de solicitações
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Carrinho de compras"
+                                data-price="500"
+                            >
+
+                            <span>
+                                <strong>
+                                    Carrinho
+                                </strong>
+
+                                <small>
+                                    Para lojas
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Pagamento online"
+                                data-price="700"
+                            >
+
+                            <span>
+                                <strong>
+                                    Pagamentos
+                                </strong>
+
+                                <small>
+                                    Integração de pagamento
+                                </small>
+                            </span>
+
+                        </label>
+
+
+
+                        <label class="feature-option">
+
+                            <input
+                                type="checkbox"
+                                value="Painel administrativo"
+                                data-price="1000"
+                            >
+
+                            <span>
+                                <strong>
+                                    Painel
+                                </strong>
+
+                                <small>
+                                    Área administrativa
+                                </small>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="back-button"
+                            onclick="previousStep(1)"
+                        >
+                            ← Voltar
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            onclick="nextStep(3)"
+                        >
+                            Continuar →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ETAPA 3 -->
+
+                <div
+                    class="form-step"
+                    id="step3"
+                >
+
+                    <h3>
+                        Conte um pouco sobre você e seu projeto.
+                    </h3>
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Seu nome *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="clientName"
+                            placeholder="Digite seu nome"
+                        >
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Telefone / WhatsApp *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="clientPhone"
+                            placeholder="(00) 00000-0000"
+                        >
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Nome da empresa ou projeto
+                        </label>
+
+                        <input
+                            type="text"
+                            id="clientBusiness"
+                            placeholder="Opcional"
+                        >
+
+                    </div>
+
+
+
+                    <div class="input-group">
+
+                        <label>
+                            Descreva o projeto
+                        </label>
+
+                        <textarea
+                            id="clientDescription"
+                            placeholder="Conte como você imagina seu site, o que deseja vender ou apresentar..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="back-button"
+                            onclick="previousStep(2)"
+                        >
+                            ← Voltar
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            onclick="nextStep(4)"
+                        >
+                            Ver resumo →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ETAPA 4 -->
+
+                <div
+                    class="form-step"
+                    id="step4"
+                >
+
+                    <h3>
+                        Confira sua solicitação.
+                    </h3>
+
+
+                    <div
+                        class="price-estimate"
+                        id="priceEstimate"
+                    >
+
+                        <span>
+                            ESTIMATIVA INICIAL
+                        </span>
+
+                        <strong>
+                            R$ 0
+                        </strong>
+
+                        <small>
+                            O valor final pode variar conforme
+                            a complexidade do projeto.
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="order-summary"
+                        id="orderSummary"
+                    >
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button
+                            class="back-button"
+                            onclick="previousStep(3)"
+                        >
+                            ← Voltar
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            onclick="sendOrder()"
+                        >
+                            Enviar solicitação →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CTA -->
+
+        <section class="final-cta">
+
+            <span>
+                PRONTO PARA COMEÇAR?
+            </span>
+
+
+            <h2>
+                Transforme sua ideia em um site.
+            </h2>
+
+
+            <button
+                class="light-button"
+                onclick="irParaPedido()"
+            >
+                Solicitar projeto →
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            NEXORA<span>.</span>
+        </div>
+
+
+        <p>
+            Soluções digitais para transformar ideias
+            em experiências online.
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#servicos">
+                Serviços
+            </a>
+
+            <a href="#processo">
+                Como funciona
+            </a>
+
+            <a href="#pedido">
+                Solicitar projeto
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 NEXORA WEB.
+            Todos os direitos reservados.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
